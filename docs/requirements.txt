@@ -1,0 +1,3 @@
+sphinx
+sphinxcontrib-mermaid
+adi_doctools
