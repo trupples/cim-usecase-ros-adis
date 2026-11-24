@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="While getting raw data in a terminal log demonstrates we have a proper IMU connection, we can also visualize the IMU orientation in Rviz." name="description" />
+
+    <title>5. Visualizing the IMU data in ROS 2 &#8212; Using ADIS IMUs in ROS 2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=7db40558" />
+    <script async="async" src="../_static/app.umd.js?v=2fe15c61"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="kuiper-adis target" href="../kuiper-adis/" />
+    <link rel="prev" title="4. Getting ADIS IMU data in ROS 2" href="../ros-acquisition/" />
+   
+  
+  
+  
+  <meta name="repository" content="Using ADIS IMUs in ROS 2">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://developer.analog.com/" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Documentation</label>
+        
+        <a id="logo" href="../">
+          <div>Using ADIS IMUs in ROS 2</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root/>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">5. Visualizing the IMU data in ROS 2</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../">
+      Using ADIS IMUs in ROS 2
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root/>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Step by step instructions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hardware-setup/">1. Hardware setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux-setup/">2. Linux setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros-setup/">3. ROS 2 runtime environment setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros-acquisition/">4. Getting ADIS IMU data in ROS 2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Visualizing the IMU data in ROS 2</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Target reference</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../kuiper-adis/">kuiper-adis target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros-sdk/">ros-sdk target</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="visualizing-the-imu-data-in-ros-2">
+<h1><span class="section-number">5. </span>Visualizing the IMU data in ROS 2<a class="headerlink" href="#visualizing-the-imu-data-in-ros-2" title="Link to this heading"></a></h1>
+<p>While getting raw data in a terminal log demonstrates we have a proper IMU connection, we can also visualize the IMU orientation in Rviz.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>ros-sdk-run-imu-vis
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># or</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>imu_vis
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># or start ROS shell and run this inside:</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>adi_imu<span class="w"> </span>imu_with_madgwick_filter_rviz.launch.py<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>iio_context_string:<span class="o">=</span><span class="s2">"ip:12.34.56.78"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>imu_device_name:<span class="o">=</span><span class="s2">"adis16607-3"</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>You should see something like this:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/rviz-example.png"><img alt="../_images/rviz-example.png" src="../_images/rviz-example.png" style="width: 30rem;" />
+</a>
+</figure>
+<p>Behind the scenes, this runs:</p>
+<ul class="simple">
+<li><p>a Madgwick filter to integrate IMU data into an orientation estimate</p></li>
+<li><p>Rviz to display the orientation estimate</p></li>
+</ul>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../ros-acquisition/" title="Previous document (Alt+Shift+LeftArrow)" class="prev"><span class="section-number">4. </span>Getting ADIS IMU data in ROS 2</a>
+    <a href="../kuiper-adis/" title="Next document (Alt+Shift+RightArrow)" class="next">kuiper-adis target</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026 Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

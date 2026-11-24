@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ros-sdk cim target builds a Docker container for ROS 2 development, containing" name="description" />
+
+    <title>ros-sdk target &#8212; Using ADIS IMUs in ROS 2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=7db40558" />
+    <script async="async" src="../_static/app.umd.js?v=2fe15c61"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="prev" title="kuiper-adis target" href="../kuiper-adis/" />
+   
+  
+  
+  
+  <meta name="repository" content="Using ADIS IMUs in ROS 2">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://developer.analog.com/" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Documentation</label>
+        
+        <a id="logo" href="../">
+          <div>Using ADIS IMUs in ROS 2</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root/>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ros-sdk target</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../">
+      Using ADIS IMUs in ROS 2
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root/>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Step by step instructions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware-setup/">1. Hardware setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux-setup/">2. Linux setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros-setup/">3. ROS 2 runtime environment setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros-acquisition/">4. Getting ADIS IMU data in ROS 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros-visualization/">5. Visualizing the IMU data in ROS 2</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Target reference</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../kuiper-adis/">kuiper-adis target</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ros-sdk target</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ros-sdk-target">
+<h1>ros-sdk target<a class="headerlink" href="#ros-sdk-target" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ros-sdk</span></code> cim target builds a Docker container for ROS 2 development, containing</p>
+<p>Configuration options:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ROS_DISTRO</span></code></p></td>
+<td><p>one of <code class="docutils literal notranslate"><span class="pre">humble</span></code>, <code class="docutils literal notranslate"><span class="pre">jazzy</span></code>, <code class="docutils literal notranslate"><span class="pre">lyrical</span></code>, <code class="docutils literal notranslate"><span class="pre">rolling</span></code></p></td>
+<td><p>ROS distribution to use as the underlying layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BUILD_PACKAGES</span></code></p></td>
+<td><p>Empty</p></td>
+<td><p>Space-separated list of packages to build from source. If empty, will build all ADI ROS 2 packages from source.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IMU_MODEL</span></code></p></td>
+<td><p>One of <code class="docutils literal notranslate"><span class="pre">adis16...</span></code>, <code class="docutils literal notranslate"><span class="pre">adis16...</span></code>, …</p></td>
+<td><p>IMU device name to connect to in IMU-related commands</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IMU_URI</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ip:12.34.56.78</span></code>, <code class="docutils literal notranslate"><span class="pre">local:</span></code>, …</p></td>
+<td><p>URI of libiio context to use in IMU-related commands</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Makefile targets:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Makefile target</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ros-sdk-build</span></code></p></td>
+<td><p>Build docker image</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ros-sdk-shell</span></code></p></td>
+<td><p>Spawn a docker container to use as an interactive shell in the ROS 2 environment</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ros-sdk-imu-node</span></code></p></td>
+<td><p>Start IMU acquisition with <code class="docutils literal notranslate"><span class="pre">adi_imu_node</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ros-sdk-imu-visualize</span></code></p></td>
+<td><p>Start IMU acquisition and 3D visualization in Rviz.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../kuiper-adis/" title="Previous document (Alt+Shift+LeftArrow)" class="prev">kuiper-adis target</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026 Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
